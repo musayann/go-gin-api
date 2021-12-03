@@ -11,6 +11,7 @@ import (
 func Routes(router *gin.Engine) {
 	router.GET("/", welcome)
 	router.GET("/users", controllers.GetAllUsers)
+	router.POST("/users", controllers.CreateUser)
 	router.NoRoute(notFound)
 }
 
