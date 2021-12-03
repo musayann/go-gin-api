@@ -18,6 +18,14 @@ func main() {
 				})
 			})
 		}
+		v2 := api.Group("/v2")
+		{
+			v1.GET("/test", func(ctx *gin.Context) {
+				ctx.JSON(200, gin.H{
+					"message": "test v2 successful",
+				})
+			})
+		}
 	}
 	Router.Run(":3080")
 }
